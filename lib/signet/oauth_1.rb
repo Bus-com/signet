@@ -278,6 +278,9 @@ module Signet #:nodoc:
       when "HMAC-SHA1"
         require "signet/oauth_1/signature_methods/hmac_sha1"
         Signet::OAuth1::HMACSHA1.generate_signature base_string, client_credential_secret, token_credential_secret
+      when "HMAC-SHA256"
+        require "signet/oauth_1/signature_methods/hmac_sha256"
+        Signet::OAuth1::HMACSHA256.generate_signature base_string, client_credential_secret, token_credential_secret
       when "RSA-SHA1"
         require "signet/oauth_1/signature_methods/rsa_sha1"
         Signet::OAuth1::RSASHA1.generate_signature base_string, client_credential_secret, token_credential_secret
